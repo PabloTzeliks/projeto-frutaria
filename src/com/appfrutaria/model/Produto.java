@@ -2,16 +2,16 @@ package com.appfrutaria.model;
 
 import com.appfrutaria.model.enums.*;;
 
-public abstract class Produto<T extends TipoProdutoEspecifico> {
+public abstract class Produto {
     
     protected int id;
 	protected String nome;
 	protected double preco;
 	protected int quantidade;
     protected double peso;
-    protected T tipoEspecifico;
+    protected TipoProdutoEspecifico tipoEspecifico;
 
-    protected Produto(int id, String nome, double preco, int quantidade, double peso, T tipoEspecifico) {
+    protected Produto(int id, String nome, double preco, int quantidade, double peso, TipoProdutoEspecifico tipoEspecifico) {
         
         this.id = id;
         this.nome = nome;
@@ -63,6 +63,8 @@ public abstract class Produto<T extends TipoProdutoEspecifico> {
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
+
+	public abstract TipoProduto getTipoProduto();
 
     @Override
     public String toString() {

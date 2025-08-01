@@ -4,5 +4,6 @@ public interface TipoProdutoEspecifico {
     
     String getNome();
     String getDescricao();
+    void mostrarTipos();
 
 }

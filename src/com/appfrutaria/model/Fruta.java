@@ -1,16 +1,23 @@
 package com.appfrutaria.model;
 
 import com.appfrutaria.model.enums.TipoFruta;
+import com.appfrutaria.model.enums.TipoProduto;
+import com.appfrutaria.model.enums.TipoProdutoEspecifico;
 
-public class Fruta extends Produto<TipoFruta> {
+public class Fruta extends Produto {
 	
-	public Fruta(int id, String nome, double preco, int quantidade, double peso, TipoFruta tipo) {
+	public Fruta(int id, String nome, double preco, int quantidade, double peso, TipoProdutoEspecifico tipo) {
 		
 		super(id, nome, preco, quantidade, peso, tipo);
 		
 	}
 
-	
+	@Override
+	public TipoProduto getTipoProduto() {
+
+		return TipoProduto.FRUTA;
+
+	}
 	
 	// Mostrar dados de uma Fruta
 	

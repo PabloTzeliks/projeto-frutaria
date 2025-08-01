@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface CrudService<T> {
 
-    void adcionarItem(T item);
+    void adicionarItem(T item);
     void removerPorId(int id);
     void atualizarItem(T item);
     List<T> listarTodos();
