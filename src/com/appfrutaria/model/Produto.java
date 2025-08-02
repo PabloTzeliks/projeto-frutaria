@@ -66,6 +66,8 @@ public abstract class Produto {
 
 	public abstract TipoProduto getTipoProduto();
 
+	public TipoProdutoEspecifico getTipoProdutoEspecifico() { return tipoEspecifico; }
+
     @Override
     public String toString() {
         // toString genérico

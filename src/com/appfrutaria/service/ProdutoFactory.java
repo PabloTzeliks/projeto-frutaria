@@ -10,23 +10,29 @@ public class ProdutoFactory {
 
     public static Produto InstanceOf(ProdutoDTO produtoDTO) {
 
-        switch(produtoDTO.tipoProduto()) {
+        try {
 
-            case FRUTA :
-                return new Fruta(produtoDTO.id(), produtoDTO.nome(), produtoDTO.preco(), produtoDTO.quantidade(), produtoDTO.peso(), produtoDTO.tipoEspecifico());
+            switch (produtoDTO.tipoProduto()) {
 
-            case LEGUME :
-                return new Legume(produtoDTO.id(), produtoDTO.nome(), produtoDTO.preco(), produtoDTO.quantidade(), produtoDTO.peso(), produtoDTO.tipoEspecifico());
+                case FRUTA :
+                    return new Fruta(produtoDTO.id(), produtoDTO.nome(), produtoDTO.preco(), produtoDTO.quantidade(), produtoDTO.peso(), produtoDTO.tipoEspecifico());
 
-            case VERDURA :
-                return new Verdura(produtoDTO.id(), produtoDTO.nome(), produtoDTO.preco(), produtoDTO.quantidade(), produtoDTO.peso(), produtoDTO.tipoEspecifico());
+                case LEGUME :
+                    return new Legume(produtoDTO.id(), produtoDTO.nome(), produtoDTO.preco(), produtoDTO.quantidade(), produtoDTO.peso(), produtoDTO.tipoEspecifico());
 
-            default:
-                return null;
+                case VERDURA :
+                    return new Verdura(produtoDTO.id(), produtoDTO.nome(), produtoDTO.preco(), produtoDTO.quantidade(), produtoDTO.peso(), produtoDTO.tipoEspecifico());
+
+            }
+
+        } catch (RuntimeException e) {
+
+            System.out.println("Erro! Ocorreu um erro ao criar o Produto, observe: " + e.getMessage());
+
         }
 
+        return null;
+
     }
-
-
 
 }
